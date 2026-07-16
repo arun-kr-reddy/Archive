@@ -10,6 +10,7 @@ winget install -e --id=7zip.7zip
 winget install -e --id=TheDocumentFoundation.LibreOffice
 winget install -e --id Flow-Launcher.Flow-Launcher
 winget install -e --id=xanderfrangos.twinkletray
+winget install -e --id Microsoft.WindowsTerminal
 winget install MusicBee
 
 REM ============================ Coding ============================
