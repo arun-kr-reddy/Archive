@@ -5,24 +5,24 @@
 
 ## NeetCode 150 Plan
 - ㅤ
-  | Week   | Topic(s)                         | Weekly # | Cumulative # |
-  | ------ | -------------------------------- | -------- | ------------ |
-  | **1**  | Arrays & Hashing + Two Pointers  | 9+5      | 14           |
-  | **2**  | Stack + Sliding Window           | 6+6      | 26           |
-  | **3**  | Binary Search + Math             | 7+5      | 38           |
-  | **4**  | Math + Linked List               | 3+11     | 52           |
-  | **5**  | Trees                            | 10       | 62           |
-  | **6**  | Trees + Tries + Bit Manipulation | 5+3+4    | 74           |
-  | **7**  | Bit Manipulation + Heap          | 3+7      | 84           |
-  | **8**  | Backtracking                     | 10       | 94           |
-  | **9**  | Intervals + Greedy               | 6+4      | 104          |
-  | **10** | Greedy + Graphs                  | 4+5      | 113          |
-  | **11** | Graphs                           | 8        | 121          |
-  | **12** | Advanced Graphs + 1-D DP         | 6+1      | 128          |
-  | **13** | 1-D DP                           | 7        | 135          |
-  | **14** | 1-D DP + 2-D DP                  | 4+3      | 142          |
-  | **15** | 2-D DP                           | 5        | 147          |
-  | **16** | 2-D DP                           | 3        | 150          |
+  | Week | Topics                                     | #   | Comments    |
+  | ---- | ------------------------------------------ | --- | ----------- |
+  | 1    | Arrays (9) + Math (3)                      | 12  | Easy        |
+  | 2    | Two Pointers (5) + Stack (6)               | 11  | Easy/Medium |
+  | 3    | Sliding Window (6) + Binary Search (5)     | 11  | Medium      |
+  | 4    | Binary Search (2) + Linked List (9)        | 11  | Medium      |
+  | 5    | Linked List (2) + Trees (9)                | 11  | Medium      |
+  | 6    | Trees (6) + Tries (3) + Math (2)           | 11  | Medium      |
+  | 7    | Heap  (7) + Backtracking (3)               | 10  | Medium/Hard |
+  | 8    | Backtracking (7) + Bit Manipulation (3)    | 10  | Hard        |
+  | 9    | Graphs (6) + Math (3)                      | 9   | Hard        |
+  | 10   | Graphs (7) + Bit Manipulation (2)          | 9   | Hard        |
+  | 11   | Advanced Graphs (6) + Bit Manipulation (2) | 8   | Very Hard   |
+  | 12   | 1-D DP (6) + Intervals (3)                 | 9   | Hard        |
+  | 13   | 1-D DP (6) + Intervals (3)                 | 9   | Hard.       |
+  | 14   | 2-D DP (4) + Greedy (3)                    | 7   | Hardest     |
+  | 15   | 2-D DP (4) + Greedy (3)                    | 7   | Hardest     |
+  | 16   | 2-D DP (3) + Greedy (2)                    | 5   | Hardest     |
 
 ## C/C++ Production-Ready Must-Know Checklist
 
