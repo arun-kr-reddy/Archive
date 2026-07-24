@@ -17,6 +17,7 @@ REM ============================ Coding ============================
 winget install -e --id Microsoft.VisualStudioCode
 winget install -e --id Git.Git
 winget install -e --id DEVCOM.JetBrainsMonoNerdFont
+winget install -e --id WinMerge.WinMerge
 
 REM ============================ Media ============================
 winget install -e --id=mpv.net
