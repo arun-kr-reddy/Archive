@@ -1,0 +1,9 @@
+[wsl2]
+vmIdleTimeout=60000         # shut down after 1 minute of idleness
+memory=4GB                  # limit RAM allocated
+processors=2                # limit num CPU cores
+swap=4GB                    # limit swap space
+
+[experimental]
+autoMemoryReclaim=dropcache # reclaim cached memory
+sparseVhd=true              # linux disk file auto shrinks when files deleted
