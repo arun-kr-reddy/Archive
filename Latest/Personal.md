@@ -1,20 +1,10 @@
 # Personal
 - [Personal Finance](#personal-finance)
-  - [Sell ESOPs on Vest?](#sell-esops-on-vest)
-  - [Don't Track Every Rupee](#dont-track-every-rupee)
-- [ESOP Taxation](#esop-taxation)
-  - [ESPP](#espp)
-  - [RSU](#rsu)
-  - [Tax Credit](#tax-credit)
-  - [ITR Schedules](#itr-schedules)
 - [Job Switch](#job-switch)
 - [Misc](#misc)
+- [Quotes](#quotes)
 
 ## Links <!-- omit from toc -->
-- [US Stocks Taxation in India](https://www.youtube.com/watch?v=NO6OlUI1Hz4)
-- [SBI TT rate](https://github.com/sahilgupta/sbi-fx-ratekeeper/blob/main/csv_files/SBI_REFERENCE_RATES_USD.csv)
-- [ETrade Gain & Losses](https://us.etrade.com/etx/sp/stockplan#/myAccount/gainsLosses)
-- [ETrade 1042S](https://us.etrade.com/etx/pxy/tax-center)
 - [ITR Form-67](https://eportal.incometax.gov.in/iec/foservices/#/dashboard/fileIncomeTaxForm)
 - [DSA Prep I](https://www.reddit.com/r/cscareerquestions/comments/ot9ssf/comment/h6tx1vx/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button)
 - [DSA Prep II](https://medium.com/@rajbopche/my-preparation-for-algo-ds-193c90952d8c)
@@ -32,32 +22,6 @@
 ### Don't Track Every Rupee
 - waste of time if already hitting your savings goal and got impulses largely under control
 - energy should be spent on making money and keeping yourself healthy & happy
-
-## ESOP Taxation
-- convert INR <-> USD using SBI TT buying rate from the last day of previous month
-- check form-12B for (already-taxed) combined ESOP (RSU + ESPP) income, and tax-computation-sheet for the RSU & ESPP split
-
-### ESPP
-- `num_shares * (purchase_date_FMV - purchase_price)` is already taxed
-- `num_shares * (sale_price - purchase_date_FMV)` to compute capital gains (using gain & losses page)
-- ![](./Media/ESPP_Gain_Loss.png)
-
-### RSU
-- `num_shares * vest_date_FMV` is already taxed
-- `num_shares * (sale_price - vest_date_FMV)` to compute capital gains (using gain & losses page)
-- since one-third sold at vesting, pair automatic tax sales (STC) with your manual sale order
-- ![](./Media/RSU_Gain_Loss.png)
-
-### Tax Credit
-- use form-1042S to claim 25% US dividend tax as a credit
-- fill out form 67 using above values converted to INR
-
-### ITR Schedules
-- **Capital Gains:**
-  - enter combined ESOP purchase & sale price
-  - enter dividend under other sources
-- **Foreign Source Income (FSI):** enter combined ESOP gain
-- **Foreign Assets (FA):** enter combined ESOP purchase & sale price for calendar year
 
 ## Job Switch
 - **When?:** can't add/update anything on your resume for 3 months
