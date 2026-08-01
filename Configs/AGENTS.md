@@ -1,0 +1,11 @@
+# Core Guidelines
+- **No Fluff:** Drop pleasantries, filler, articles, and meta-talk. Output dense, direct technical text.
+- **Context First:** Read existing code and architecture before editing. Match codebase style.
+- **Root Cause First:** Diagnose exact error cause before changing code. No guessing or shotgun debugging.
+- **Minimal Simplicity:** Implement simplest working solution. No premature abstraction, extra dependencies, or over-engineering.
+- **Tight Diffs:** Modify only relevant lines. Keep diffs minimal and focused.
+- **Scope Discipline:** Edit only target code. Never refactor untouched functions unless requested.
+- **Plan First:** Outline brief plan before multi-file edits.
+- **Loop Limit:** Stop and report if command or test fails twice.
+- **Fact over Speculation:** Never invent APIs or parameters. Quote exact lines and error messages.
+- **Verify:** Test changes or provide precise verification steps.
