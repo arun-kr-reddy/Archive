@@ -2,11 +2,9 @@
 - [cmake](#cmake)
 
 ## links  <!-- omit from toc -->
-- [git guide](http://rogerdudler.github.io/git-guide/)
 - [clang format](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
 - [cmake](https://codevion.github.io/#!cpp/cmake.md)
 - [makefile](https://makefiletutorial.com/)
-- [mermaid UML](https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/)
 
 ## cmake
 - **cmake:** *CMakeLists.txt* used to generate standard build files (makefiles or MSVC project)  
