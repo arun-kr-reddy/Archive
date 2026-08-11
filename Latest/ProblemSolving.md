@@ -3,8 +3,8 @@
 - [Big-O](#big-o)
 - [Arrays](#arrays)
 - [Hash Tables](#hash-tables)
-- [Leetcode](#leetcode)
-  - [Array \& Hash Map](#array--hash-map)
+- [Graphs](#graphs)
+- [Array \& Hash Map](#array--hash-map)
 
 ## Links <!-- omit from toc -->
 - [William Fiset Data Structures (Playlist)](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)
@@ -28,7 +28,7 @@
   - *example:* if running time given by `f(n) = 7*log(n)^3 + 15*n^2 + 2*n^3 + 8`, then `O(f(n)) = O(n^3)`
   - ![](./Media/Big_O_Complexity.png)
 - **Logarithm:**
-  - `ceil(log(n))` represe nts the minimum number of bits to uniquely identify a number
+  - `ceil(log(n))` represents the minimum number of bits to uniquely identify a number
   - each step in search algo is essentially resolving 1bit of target's index, *i.e.*`O(log(n))`
   - each step in comparison sort algo is finding a correct index for each element in remaining positions  
     `log(n) + log(n-1) + ... + log(1)` = `O(log(n)) + O(log(n)) + ...` = `O(n*log(n))`

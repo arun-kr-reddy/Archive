@@ -12,8 +12,6 @@
 - [Single Instruction Multiple Data](#single-instruction-multiple-data)
 - [Graphics Processing Unit](#graphics-processing-unit)
 - [Memory](#memory)
-  - [Cache](#cache)
-  - [multi core caches](#multi-core-caches)
 - [prefetching](#prefetching)
 - [Parallel Computing](#parallel-computing)
 - [Misc](#misc)
@@ -27,12 +25,6 @@
 
 ## Introduction
 - **Abstraction:** higher level only needs to know about interface to lower level, not how its implemented
-- **Moore's law:**
-  - observation of historical trend that transistor density doubles approximately every two years
-  - smaller transistors allowed higher clock speed and more complex instruction-level-parallelism features
-  - clock `f ∝ V` volatage and power `p = f * V^2`, so `p ∝ f^3`
-  - practically general-purpose instruction streams (due to data dependencies & branches) rarely sustain more than 4 instructions-per-cycle
-  - so now focus on parallelism (multi-core) and specialization (NPUs, ISPs)
 - **Iron Law of Performance:** `num_instructions * cycles_per_instruction x clock_cycle_time` gives time taken to execute a program
 
 ## Instruction Set Architecture
@@ -609,11 +601,6 @@ memory-region based stride prefetching where N = 1
   - **cache pollution:** extra load demand misses due to prefetch placement in cache
 
 ## Parallel Computing
-- **Parallel Computer:** collection of processing elements that cooperate to solve problems quickly
-- **Fast != Efficient:**
-  - just because program runs faster on parallel computer, doesn't mean its using the hardware efficiently
-  - *example:* 2x speedup with 10 processors
-  - achieving efficient processing almost always comes down to accessing data efficiently
 - **Cache:**
   - on-chip storage that maintains a copy of a subset of values in memory
   - if address is "in cache", it can be loaded/stored more quickly that if it only resided in memory
