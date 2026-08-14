@@ -601,6 +601,16 @@ memory-region based stride prefetching where N = 1
   - **cache pollution:** extra load demand misses due to prefetch placement in cache
 
 ## Parallel Computing
+- **Fast != Efficient:**
+  - cost of data movement & synchronization often negates parallel gain
+  - *e.g.* 2x speedup with 10 cores
+  - > achieving efficient processing almost always comes down to accessing data efficiently
+- **Why Parallelism:**
+  - **Moore's law:** historical trend that transistor density doubles approximately every two years
+  - smaller transistors allowed higher clock speed & more complex instruction-level-parallelism features
+  - dynamic power `p ∝ f * V^2`, since clock frequency `f ∝ V` voltage, `p ∝ f^3`
+  - practically ILP saturates at ~4 instruction-per-cycle due to control & data dependencies
+  - so now focus is on explicit parallelism (multi-core, GPUs) & domain specialization (NPUs, ISPs)
 - **Cache:**
   - on-chip storage that maintains a copy of a subset of values in memory
   - if address is "in cache", it can be loaded/stored more quickly that if it only resided in memory
