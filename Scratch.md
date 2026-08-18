@@ -6,242 +6,200 @@
 
 ## NeetCode 150 Plan
 - ㅤ
-    | Week | Topics                                       | Total | Difficulty Tier |
-    | ---- | -------------------------------------------- | ----- | --------------- |
-    | 1    | Arrays & Hashing (9) + Bit Manipulation (3)  | 12    | Easy            |
-    | 2    | Two Pointers (5) + Stack (6)                 | 11    | Easy / Med      |
-    | 3    | Sliding Window (6) + Binary Search (5)       | 11    | Medium          |
-    | 4    | Binary Search (2) + Linked List (9)          | 11    | Medium          |
-    | 5    | Linked List (2) + Trees (9)                  | 11    | Medium          |
-    | 6    | Trees (6) + Tries (3) + Bit Manipulation (2) | 11    | Medium          |
-    | 7    | Heap (7) + Backtracking (3)                  | 10    | Med / Hard      |
-    | 8    | Backtracking (7) + Bit Manipulation (2)      | 9     | Hard            |
-    | 9    | Graphs (7) + Math (2)                        | 9     | Hard            |
-    | 10   | Graphs (6) + Adv Graphs (3)                  | 9     | Hard / V. Hard  |
-    | 11   | Adv Graphs (3) + Intervals (6)               | 9     | Hard            |
-    | 12   | Greedy (8) + Math & Geometry (2)             | 10    | Hard            |
-    | 13   | 1-D DP (6) + Math (2)                        | 8     | Hard            |
-    | 14   | 1-D DP (6) + Math (2)                        | 8     | Hard            |
-    | 15   | 2-D DP (6)                                   | 6     | Hardest         |
-    | 16   | 2-D DP (5)                                   | 5     | Hardest         |
-- **Workload:**
-  ```
-  Weeks 01–06 (Fundamentals)   : [████████████]  11–12 probs/week  (Low cognitive load)
-  Weeks 07–12 (Core Algorithms): [██████████  ]   9–10 probs/week  (Moderate cognitive load)
-  Weeks 13–14 (1-D DP)         : [████████    ]      8 probs/week  (High state-derivation load)
-  Weeks 15–16 (2-D DP)         : [██████      ]    5–6 probs/week  (Peak implementation & debugging time)
-  ```
+  | Week | Topics & Official Breakdown                                         | Total | E   | M   | H   |
+  | ---- | ------------------------------------------------------------------- | ----- | --- | --- | --- |
+  | 1    | Arrays & Hashing (9: 4E, 5M) + Two Pointers (5: 1E, 3M, 1H)         | 14    | 5   | 8   | 1   |
+  | 2    | Stack (6: 1E, 4M, 1H) + Sliding Window (4: 1E, 3M) + Math (1: 1E)   | 11    | 3   | 7   | 1   |
+  | 3    | Sliding Window (2: 2H) + Binary Search (7: 1E, 5M, 1H) + LL (2: 2E) | 11    | 3   | 5   | 3   |
+  | 4    | Linked List (9: 1E, 6M, 2H) + Bit Manipulation (2: 2E)              | 11    | 3   | 6   | 2   |
+  | 5    | Trees (Part 1: 12: 5E, 7M) + Bit Manipulation (2: 2E)               | 14    | 7   | 7   | 0   |
+  | 6    | Trees (Part 2: 3: 1M, 2H) + Tries (3: 2M, 1H) + Bit (3: 1E, 2M)     | 9     | 1   | 5   | 3   |
+  | 7    | Heap / Priority Queue (7: 2E, 4M, 1H) + Intervals (4: 1E, 3M)       | 11    | 3   | 7   | 1   |
+  | 8    | Intervals (2: 1M, 1H) + Greedy (8: 7M, 1H)                          | 10    | 0   | 8   | 2   |
+  | 9    | Backtracking (Part 1: 6: 6M) + Math & Geometry (3: 1E, 2M)          | 9     | 1   | 8   | 0   |
+  | 10   | Backtracking (Part 2: 4: 3M, 1H) + Graphs (Part 1: 5: 5M)           | 9     | 0   | 8   | 1   |
+  | 11   | Graphs (Part 2: 8: 7M, 1H)                                          | 8     | 0   | 7   | 1   |
+  | 12   | Advanced Graphs (6: 3M, 3H)                                         | 6     | 0   | 3   | 3   |
+  | 13   | 1-D DP (Part 1: 7: 2E, 5M) + Math & Geometry (4: 4M)                | 11    | 2   | 9   | 0   |
+  | 14   | 1-D DP (Part 2: 5: 5M) + 2-D DP (Part 1: 2: 2M)                     | 7     | 0   | 7   | 0   |
+  | 15   | 2-D DP (Part 2: 5: 5M)                                              | 5     | 0   | 5   | 0   |
+  | 16   | 2-D DP (Part 3: 4: 4H)                                              | 4     | 0   | 0   | 4   |
 
 ## Optimization Roadmap
+- LeetGPU for practice
+- [GPUMode GPU Puzzles](https://github.com/srush/gpu-puzzles)
+- [Lei Mao Optimization Blogs](https://leimao.github.io/article/CUDA-Matrix-Multiplication-Optimization/)
 
-### 1. Definitive Resource Stack
+### 0a. Pick: AUB PMPP (Izzat El Hajj)
 
-#### A. Parallel Systems & Hardware Architecture
-| Resource | Scope / Usage | Focus Areas |
-|---|---|---|
-| **Stanford CS149** (*Kayvon Fatahalian*) | Video lectures | Parallel mental models, memory consistency, cache coherency (MESI), snooping vs. directory, heterogeneous scheduling. |
-| **PMPP Book (4th Ed)** (*Kirk & Hwu*) | Text reference (*skip YT*) | Ch. 4–10: Memory coalescing, shared memory bank conflicts, stencils, parallel reductions, prefix sum (scan). |
-| **Hennessy & Patterson (App. F)** | Text reference | Theoretical bridge from CPU SIMD/vector units directly to GPU SIMT execution. |
-| **NVIDIA Tuning Guides** | Whitepapers / Docs | Ampere, Hopper, and Blackwell microarchitecture, PTX ISA reference, CUDA C++ Programming Guide. |
+**Why:** With 7 YoE in SIMD/HVX and Onur Mutlu's architecture completed, CPU performance and microarchitecture are already your strong suits. Your primary interview vulnerability is **live GPU kernel coding in standard CUDA/SIMT**. PMPP gives direct, line-by-line coverage of the algorithmic templates tested in FAANG GPU/Inference rounds.
 
-#### B. CUDA Engineering, Frameworks & Tooling
-| Resource | Scope / Usage | Focus Areas |
-|---|---|---|
-| **OLCF CUDA Training** (*Oak Ridge*) | Video series | Warp shuffles (`__shfl_sync`), stream concurrency, cooperative groups, async memory pipeline. |
-| **[PyTorch C++/CUDA Extensions](https://pytorch.org/tutorials/advanced/cpp_extension.html)** | Official Tutorial | `torch::Tensor` accessors, `pybind11` binding, custom autograd backward functions, dispatcher registration. |
-| **OpenAI Triton Docs & Tutorials** | Framework / Compiler | Block-pointer layouts, auto-tuning, Triton IR $\to$ MLIR compilation pipeline. |
-| **[CUTLASS / CuTe](https://github.com/NVIDIA/cutlass)** (*NVIDIA*) | C++ Template Library | CuTe tensor layout engine (`Layout<Shape, Stride>`), hierarchical GEMM tiling, TMA/WGMMA integration. |
-| **FlashAttention Repos** (*Tri Dao*) | Source code | Reference CUDA implementations for FlashAttention-1, 2, and 3. |
+### 0b. Must-Know Topics from the Other Two Courses
 
-#### C. Hardware-Centric AI Operator Math
-| Resource | Scope / Usage | Focus Areas |
-|---|---|---|
-| **Andrej Karpathy** (*YouTube*) | *Let's build GPT from scratch* | Tensor shapes, $QK^TV$ projection flows, autoregressive generation loops, residual streams. |
-| **Umar Jamil** (*YouTube*) | Selected videos | Mathematical derivations of Online Softmax, RoPE Givens rotations, LLaMA blocks (RMSNorm, SwiGLU). |
-| **CMU 10-414 / 714** (*Chen & Kolter*) | Selected lectures | Autograd compute graphs, GPU memory layout transformations, kernel dispatch backend. |
+#### From Stanford CS 149 (Parallel Computing)
+- **Roofline Model:** Formulating operational intensity (`FLOPs/Byte`) and identifying memory bandwidth vs. compute bounds.
+- **Memory Consistency Models:** Sequential Consistency (SC) vs. Total Store Order (TSO) vs. Weak/Release Consistency.
+- **Hardware Synchronization Primitives:** Atomic Compare-And-Swap (CAS), Load-Link/Store-Conditional (LL/SC), and lock-free ABA mitigation.
+- **Cache Coherence Nuances:** True sharing vs. False sharing invalidation overhead across multicore caches.
 
-#### D. Profiling, Benchmarking & Correctness
-| Tool / Methodology | Primary Purpose |
-|---|---|
-| **NVIDIA Nsight Compute (NCU)** | Speed-of-Light (SOL), Roofline analysis, warp stall reasons (`stall_long_scoreboard`, `stall_barrier`), memory throughput. |
-| **NVIDIA Nsight Systems (NSYS)** | CUDA streams overlap, host launch latencies, kernel execution timelines, NCCL communication trace. |
-| **[NVIDIA Compute Sanitizer](https://docs.nvidia.com/compute-sanitizer/)** | `memcheck` (out-of-bounds), `racecheck` (RAW/WAR shared memory hazards), `synccheck` (divergent barrier execution). |
-| **Benchmarking Rigor** | L2 cache flushing (dummy buffer eviction between runs), CUDA Events vs. host timers, GPU clock locking (`nvidia-smi -lgc`). |
+#### From MIT 6.172 (Performance Engineering)
+- **Compiler Vectorization Inhibitors:** Pointer aliasing, loop-carried dependencies, struct layout padding, and effective use of `__restrict__`.
+- **Cache-Oblivious Algorithms:** Recursive divide-and-conquer data layouts (e.g., Morton order/Z-order curve, recursive matrix transpose) that optimize cache reuse without explicit cache size tuning.
+- **Branchless Optimization:** Bitwise arithmetic masking, `CMOV` utilization, and eliminating branch misprediction penalties in inner loops.
 
-#### E. DSA & Coding Screens
-| Resource | Role |
-|---|---|
-| **NeetCode 150** | 16-Week structured execution roadmap. |
-| **William Fiset** (*YouTube*) | Data structures (Indexed Heaps, DSU, Tries, Segment Trees) and Graphs (Dijkstra, Topo Sort, Tarjan's SCC). |
-| **Abdul Bari** (*YouTube*) | Dynamic Programming (0/1 Knapsack, LCS, Matrix Chain Multiplication). |
+### 1. Talks to Watch
+- **Mike Acton: *"Data-Oriented Design and C++"*** -> AoS vs. SoA layout transforms, cacheline alignment, eliminating pointer indirection.
+- **Fedor Pikus: *"The Memory Model: What is it, and why do I care?"*** -> `memory_order_relaxed`, `acquire/release`, cacheline bouncing, false sharing.
+- **Denis Bakhvalov: *"Performance Analysis and Tuning on Modern CPUs"*** -> Top-Down Microarchitecture Analysis (TMA), PMU hardware counters, `perf`/VTune bottleneck diagnosis.
+- **Carl Cook: *"When a Microsecond Is Too Slow: Creating High Performance C++"*** -> TLB miss elimination, cacheline padding (`alignas(64)`), zero dynamic allocations on hot paths.
+- **Fedor Pikus: *"Branchless Programming in C++"*** -> Arithmetic masking, `CMOV` instruction selection, eliminating branch mispredictions in inner loops.
 
----
+### 2. The 5 Live-Coding Kernel Templates (Memorize & Write Blind)
 
-### 2. Mandatory AI Operator Math (Hardware-Driven Reformulations)
+FAANG optimization live coding draws 90% of its questions from variations of these 5 implementations:
 
-Master the algebraic derivations for operators where the math directly dictates SRAM tiling and memory layout:
+1. **Tiled SGEMM (CUDA):**
+   * Shared memory tiling (32x32), register accumulation, bank conflict avoidance.
+   * **Edge Case:** Interviewers will test non-multiple-of-32 matrix dimensions ($M, N, K$). You must include dynamic boundary guards (`row < M && col < K`) inside the shared memory staging loops without causing warp divergence deadlocks on `__syncthreads()`.
+2. **Parallel Warp Reduction (CUDA):**
+   * Shared memory load -> Intra-warp tree reduction via `__shfl_down_sync` -> Block-wide result.
+   * **Edge Case:** Single-block reduction is insufficient. Ensure you know the 2-stage reduction pattern (Grid-stride loop $\to$ Intra-block warp reduction $\to$ `atomicAdd` to global memory or 2nd-pass kernel launch).
+3. **Branchless 3x3 Filter (NEON/AVX):**
+   * Manual unrolling, unaligned vector loads, branchless clamp-to-edge/padding without `if/else`.
+   * **Edge Case:** When filtering 8-bit image pixels (e.g., $3\times3$ Sobel), unpacking `uint8x8` to `uint16x8` before multiplication is mandatory to prevent arithmetic overflow.
+4. **Lock-Free SPSC Ring Buffer (C++ Atomics):**
+   * Circular buffer with `std::atomic<size_t>` head/tail using strict `acquire`/`release` ordering.
+   * **Edge Case:** The `head` and `tail` atomic indices must be padded to separate cache lines (`alignas(64)` or `std::hardware_destructive_interference_size`) to prevent core-to-core cacheline bouncing.
+5. **Cache-Aligned Custom Allocator (C++):**
+   * Implementation of `aligned_alloc(size_t bytes, size_t alignment)` and `aligned_free(void* ptr)` storing pointer offsets.
+   * **Edge Case:** The original pointer returned by `malloc` must be stored immediately before the aligned pointer (`((void**)aligned_ptr)[-1] = raw_ptr`) for $O(1)$ deallocation without extra metadata lookup tables.
 
-```
-[Attention Math]        ──> Online Softmax (Running max m_i and normalizer l_i tracking in SRAM)
-[Decode Latency]        ──> Split-K FlashDecoding (Parallelizing sequence dimension across SMs)
-[Activation Outliers]   ──> Scale-Fusion Quantization (Y = (X · S^-1) · (S · W) -> per-channel scale folding)
-[Positional Indexing]   ──> RoPE Givens Rotation (Complex 2D rotation on interleaved/split head dimensions)
-[Normalization Layers]  ──> Two-Pass Online RMSNorm / LayerNorm (Warp-shuffle parallel reductions)
-```
+### 3. The Only 2 Low-Level System Designs to Prepare
 
----
+1. **Zero-Copy Camera/Vision Ingestion Pipeline:**
+   * Sensor -> V4L2 kernel driver -> `dma-buf`/ION shared memory -> GPU/NPU execution -> Display (Zero CPU `memcpy`, latency budgeting, frame-drop handling).
+2. **Multi-Threaded Asynchronous Frame Processor:**
+   * Double/Triple buffering, worker pool thread affinity (`pthread_setaffinity_np`), ring buffer queues, avoiding lock contention and false sharing on cachelines.
 
-### 3. Advanced Systems & Hardware Topics for FAANG Loops
+### 4. Verbal Analysis Checklist (How to Answer Optimization Questions)
+In architecture/profiling rounds, structure every response around these 3 diagnostics:
+1. **Roofline Placement:** Calculate Arithmetic Intensity (FLOPs/Byte). State immediately whether the workload is memory-bandwidth bound or compute-bound.
+2. **TMA Diagnostic:** State which execution bottleneck to probe first: *Frontend Bound*, *Bad Speculation*, *Backend Bound: Memory*, or *Backend Bound: Core*.
+3. **Optimization Lever:** Propose specific mitigation:
+   * *Memory bound:* Loop tiling, packing/AoS-to-SoA conversion, INT8 quantization, streaming stores.
+   * *Compute bound:* Vector unrolling, instruction pipelining, FMA utilization, Tensor Core intrinsics.
 
-#### A. Microarchitectural Primitives (Hopper / Blackwell)
-- **TMA (Tensor Memory Accelerator):** Asynchronous multi-dimensional global-to-shared memory transfer bypassing registers.
-- **WGMMA (Warp-Group MMA):** 128-thread coordinated matrix multiplication directly writing to registers.
-- **DSMEM (Distributed Shared Memory) & Clusters:** SM-to-SM shared memory access across thread block clusters.
-- **Asynchronous Barriers:** Hardware `mbarrier` objects and transaction-tracking barriers.
-- **Shared Memory Swizzling:** Bitwise XOR indexing (`bank = (row ^ col) % 32`) to eliminate 32-bank conflicts during vector loads (`float4`/`int4`).
+### 5. The 3 High-Frequency Interview Traps
 
-#### B. Distributed Systems & Collective Communication (NCCL)
-- **Collective Primitives:** Ring All-Reduce, Tree All-Reduce, All-to-All (MoE), Reduce-Scatter, All-Gather.
-- **Parallelism Strategies:** Tensor Parallelism (TP), Context/Sequence Parallelism (CP/SP via RingAttention), Pipeline Parallelism (PP via 1F1B schedule).
-- **Overlapping:** Non-blocking NCCL streams, user-buffer registration, compute-communication hiding.
+#### Trap 1: `__syncthreads()` Inside Divergent Branches (CUDA)
+* **Interview Trap:** Placing `__syncthreads()` inside an `if (threadIdx.x < boundary)` block.
+* **Failure Mode:** Causes undefined behavior or hardware GPU deadlocks if not all threads in a thread block reach the barrier.
+* **Rule:** If shared memory loading requires boundary checks, mask the load assignment, never the `__syncthreads()` barrier.
 
-#### C. Quantization & Low-Precision Arithmetic
-- **Numerical Formats:** FP8 (E4M3 for compute vs. E5M2 for gradients), FP4/NVFP4, MXFP4/6/8 (Microscaling formats).
-- **Register-Level Manipulation:** Bit-packing/unpacking (`__byte_perm`, PTX `prmt.b32`), fused dequant-GEMM (AWQ/GPTQ/Marlin).
-- **Numerical Stability:** Mixed-precision accumulation (FP16/BF16 into FP32 accumulators) and underflow/overflow prevention.
+#### Trap 2: Incorrect Active Mask in Warp Primitives
+* **Interview Trap:** Passing `0` or omitting the mask in `__shfl_down_sync(mask, val, delta)`.
+* **Rule:** Always provide full warp mask `0xffffffff` (or active thread mask via `__activemask()`). Explicitly state to the interviewer that full mask assumes all 32 threads participate without branch divergence.
 
-#### D. Mixture-of-Experts (MoE) & LLM Serving
-- **Grouped GEMM:** Co-locating multiple GEMMs with dynamic, variable batch sizes within a single GPU grid.
-- **Token Dispatch/Routing:** Fused Top-$k$ Softmax gating kernels, token scatter/gather permutations.
-- **PagedAttention:** Virtual memory block-table lookups for non-contiguous KV-cache management.
-- **Speculative Decoding:** Tree-based verification attention kernels (Medusa/Eagle).
-- **Serving Architecture:** Chunked Prefill and Prefill-Decode (PD) disaggregation.
+#### Trap 3: Truncation vs. Round-to-Nearest in Quantization
+* **Interview Trap:** Casting float to int via standard C-cast `(int8_t)(val * scale)` in SIMD/CUDA.
+* **Failure Mode:** C-casts truncate toward zero, causing systematic DC bias in CV/ML models.
+* **Rule:** Always use round-to-nearest-even intrinsics: `__float2int_rn()` in CUDA, `vcvtnq_s32_f32()` in NEON, or `_mm256_cvtps_epi32()` in AVX.
 
-#### E. ML Compilers & PyTorch Graph Internals
-- **MLIR Infrastructure:** Lowering pipelines across dialects (`linalg` $\to$ `affine` $\to$ `gpu` $\to$ `nvvm` $\to$ PTX).
-- **TorchDynamo & TorchInductor:** Graph capture, kernel fusion, memory reuse planning, and automatic Triton codegen.
-- **Execution Overhead Reduction:** CUDA Graphs capturing to eliminate CPU launch latencies and driver runtime bottlenecks.
+#### Trap 4: Forgetting Memory Writes in Arithmetic Intensity Calculations
+* **Interview Trap:** Calculating operational intensity of AXPY ($Y = \alpha X + Y$) as $2\text{ FLOPs} / 8\text{ Bytes}$ (only counting reads of $X$ and $Y$).
+* **Correction:** Memory traffic includes reading $X$, reading $Y$, **and writing back $Y$** ($3 \times 4\text{ bytes} = 12\text{ bytes}$). True intensity $= 2 / 12 = 0.167\text{ FLOPs/Byte}$.
+
+### 6. Readiness Assessment Checklist (Blind Whiteboard Benchmark)
+
+*Execution Rules: Write all implementations on a blank screen (CoderPad / Plain text editor). No IDE, no autocompletion, no compiler checks. Target time: $\le 25\text{ minutes}$ per template.*
+
+#### Benchmark 1: Tiled SGEMM Kernel (CUDA)
+* **Prompt:** Write a CUDA kernel `void sgemm_tiled(const float* A, const float* B, float* C, int M, int N, int K, float alpha, float beta)` computing $C = \alpha(A \times B) + \beta C$.
+* **Pass Criteria:**
+  * [ ] Uses 2D thread block ($16\times16$ or $32\times32$) and allocates corresponding `__shared__ float As[TILE][TILE]` and `Bs[TILE][TILE]`.
+  * [ ] Iterates over $K$ in steps of `TILE`, loading global data into shared memory with correct boundary checks for non-multiple-of-`TILE` dimensions.
+  * [ ] Correctly places `__syncthreads()` before and after shared memory computation phases.
+  * [ ] Zero shared memory bank conflicts on load/store operations.
+  * [ ] Accumulates results in register variables before writing back to global memory $C$.
+
+#### Benchmark 2: Block-Wide Parallel Reduction (CUDA)
+* **Prompt:** Write a CUDA kernel `void reduce_sum(const float* input, float* output, int n)` computing the sum of an arbitrary-sized array.
+* **Pass Criteria:**
+  * [ ] Uses grid-stride loop to handle array lengths $N > \text{gridDim} \times \text{blockDim}$.
+  * [ ] Performs intra-warp reduction using `__shfl_down_sync(0xffffffff, val, offset)` down to lane 0.
+  * [ ] Stores warp results into shared memory (`__shared__ float warp_sums[32]`) and performs a final reduction with the first warp.
+  * [ ] Atomically writes block result to `*output` via `atomicAdd()`.
+  * [ ] Correctly uses active thread masks with no divergent synchronization deadlocks.
+
+#### Benchmark 3: Branchless $3\times3$ Box/Sobel Filter (ARM NEON or AVX2)
+* **Prompt:** Write a C++ function optimizing a $3\times3$ filter over a single-channel `uint8_t` image of size $W \times H$ with stride $S$.
+* **Pass Criteria:**
+  * [ ] Loads 3 rows of pixel vectors using contiguous unaligned loads (`vld1q_u8` or `_mm256_loadu_si256`).
+  * [ ] Unpacks/widens 8-bit unsigned integers to 16-bit integers (`vmovl_u8` / `_mm256_cvtepu8_epi16`) before arithmetic accumulation.
+  * [ ] Uses vector shift/pack instructions to narrow results back to `uint8_t` with saturation (`vqmovn_u16` / `_mm256_packus_epi16`).
+  * [ ] Implements clamp-to-edge boundary handling in-register using `vmin`/`vmax` without scalar `if/else` checks per pixel.
+  * [ ] Processes vector width multiples in the main loop, with a clean scalar cleanup loop for tail pixels.
+
+#### Benchmark 4: Lock-Free SPSC Circular Queue (C++ Atomics)
+* **Prompt:** Implement a header-only template class `template<typename T, size_t Capacity> class SPSCQueue` supporting `bool push(const T&)` and `bool pop(T&)`.
+* **Pass Criteria:**
+  * [ ] `Capacity` enforced as a power of 2, using bitwise masking `head & (Capacity - 1)` instead of modulo `%`.
+  * [ ] `head` and `tail` indices declared as `std::atomic<size_t>` with `alignas(64)` to eliminate false sharing.
+  * [ ] `push()` uses `std::memory_order_relaxed` for reading `head`, `std::memory_order_acquire` for loading `tail`, and `std::memory_order_release` when updating `head`.
+  * [ ] `pop()` uses `std::memory_order_relaxed` for reading `tail`, `std::memory_order_acquire` for loading `head`, and `std::memory_order_release` when updating `tail`.
+  * [ ] Fully lock-free, zero mutexes, zero dynamic memory allocations post-initialization.
+
+#### Benchmark 5: Cache-Aligned Custom Memory Allocator (C++)
+* **Prompt:** Implement `void* custom_aligned_alloc(size_t size, size_t alignment)` and `void custom_aligned_free(void* ptr)`.
+* **Pass Criteria:**
+  * [ ] Asserts `alignment` is a power of 2 and a multiple of `sizeof(void*)`.
+  * [ ] Calculates total allocation size: `size + alignment - 1 + sizeof(void*)`.
+  * [ ] Computes aligned address using bit manipulation: `(raw_address + sizeof(void*) + (alignment - 1)) & ~(alignment - 1)`.
+  * [ ] Stores the original unaligned pointer returned by `malloc` immediately before the aligned memory address: `((void**)aligned_ptr)[-1] = raw_ptr`.
+  * [ ] `custom_aligned_free` retrieves `((void**)ptr)[-1]` and calls `free()` on the original base pointer safely.
 
 ## C/C++ Production-Ready Must-Know Checklist
 
-### 1. Low-Level Mechanics, Memory, & I/O (C Foundations)
-- **Data & Architecture**
-    - **The Stack vs. The Heap:** Layout of memory segments (Text, Data, BSS, Stack, Heap) and how allocation affects performance.
-    - **Integer & Float Representation:** How data exists in hardware: Two's Complement for signed integers, sign extension, integer promotion, and IEEE 754 format for floating-point numbers.
-    - **Endianness:** Big-Endian vs. Little-Endian storage, and how it impacts network programming, file I/O, and serialization.
-    - **The Spiral / Right-Left Rule:** The technique used to decipher complex C declaration syntax (e.g., `int (*(*f)())[5]`).
-- **Pointers & Scope Modifiers**
-    - **Pointer Mechanics:** Double pointers (`char**`), pointer arithmetic, and generic pointers (`void*`).
-    - **Function Pointers:** Syntax, callbacks, and manually implementing C-style polymorphism.
-    - **Memory Alignment & Padding:** How compilers pack structures; using `alignof`, `alignas`, and Struct Bitfields to compress data into explicit bit-widths.
-    - **Strict Aliasing Rule:** Understanding why dereferencing pointers of different types pointing to the same memory location triggers compiler bugs, and how to safely use `char*` or `std::memcpy` instead.
-    - **Scope & Lifetime Modifiers:**
-        - *Storage Class Specifiers & Duration:* `static`, `extern`, `inline`. Automatic, static, and dynamic storage durations.
-        - *Type Qualifiers:* `const`, `volatile`, `mutable` (allowing modification of class members inside a const function).
-        - *Linkage Types:* Internal linkage (translation unit scope) vs. External linkage (program scope).
-- **Input, Output, & Data Streams**
-    - **Standard I/O Channels:** The system mechanics behind `stdin`, `stdout`, and `stderr`.
-    - **Command Line Arguments:** Parsing parameters into a program via `int main(int argc, char* argv[])`.
-    - **File & String Streams:** Managing formatted text, file reading/writing, and string transformations via `std::fstream`, `std::stringstream`, and type-safe extractors (`<<`, `>>`).
-- **Basic Control Flow & Behaviors**
-    - **Control Flow:** Proper usage of `break` and `continue`, and why `goto` is restricted to low-level cleanup.
-    - **Variable Shadowing:** The risk of declaring a variable in an inner scope that hides a variable in an outer scope.
-    - **Types of Safety Behaviors:**
-        - *Undefined Behavior (UB):* Signed overflow, reading uninitialized memory, dangling pointers.
-        - *Implementation-Defined Behavior:* Sizing of basic integers (e.g., `int` being 2 or 4 bytes depending on target platform).
-        - *Unspecified Behavior:* The order of evaluation of function arguments.
+### 1. Memory Layouts, Pointer Mechanics, & Hardware Sympathy
+* **Hardware Representation:** Two's complement, sign extension, integer promotion rules, IEEE 754 float representation and precision loss.
+* **Alignment & Padding:** `alignof`, `alignas(64)`, structure padding rules, cacheline packing.
+* **Cacheline Interference (C++17):** Preventing false sharing via `std::hardware_destructive_interference_size`.
+* **Type Punning & Aliasing:** Strict aliasing rule, `std::memcpy` optimization idioms, and `std::bit_cast` (C++20).
+* **Compiler Optimization Hints:** `__restrict__` pointer qualifiers, `[[likely]]` / `[[unlikely]]`, and `std::assume_aligned` for SIMD code generation.
+* **Low-Level Memory Management:** Placement `new`, explicit destructor calls (`ptr->~T()`), and writing custom bump/arena allocators.
 
-### 2. Object-Oriented Programming & Object Model (C++)
-- **Class Anatomy & Functions**
-    - **Constructors & Destructors:** Default, parameterized, copy, and move constructors.
-    - **Uniform & Braced Initialization (C++11):** Preventing narrowing conversions using `{}` (e.g., `int x{5.5};` triggers a compiler error instead of silent truncation).
-    - **Static Class Members:** `static` variables (shared across all instances) and `static` functions (callable without an object instance).
-    - **Friend Keyword:** Granting a `friend class` or `friend function` private access to class internals without exposing them publicly.
-    - **Enums:** Unscoped (`enum`) vs. Scoped Enums (`enum class` which prevents global namespace pollution and type-mixing).
-- **Overloading & The Runtime Model**
-    - **Function Overloading & Default Arguments:** Rules for changing function signatures, and how default parameters are evaluated at the call site.
-    - **Name Mangling:** How the C++ compiler modifies function names to support overloading, and how `extern "C"` disables it for C compatibility.
-    - **Early vs. Late Binding:** Compile-time resolution (overloading/templates) vs. Runtime resolution (virtual functions).
-    - **Polymorphism Engine:** How compilers use Virtual Tables and Virtual Table Pointers (`vptr`) to implement Virtual Functions, Abstract Classes, and Interfaces.
-    - **The Diamond Problem:** Solving multiple inheritance ambiguities using **Virtual Inheritance**.
+### 2. Value Semantics, Object Model, & RAII
+* **Move Semantics & Forwarding:** `std::move`, `std::forward`, universal/forwarding references (`T&&`), rvalue/xvalue/prvalue distinctions.
+* **Constructor Optimization:** Rule of 0/5, copy/move elision (RVO/NRVO), and `noexcept` move constructors (enabling `std::vector` relocation optimizations).
+* **Smart Pointers (Zero-Overhead Resource Handles):** `std::unique_ptr` with custom stateless/stateful deleters (managing OS handles/DMA buffers), `std::shared_ptr` control-block allocation overhead (`make_shared` cache locality vs. weak ref retention).
+* **Runtime Polymorphism Cost:** Virtual tables (`vptr`), indirect branch misprediction overhead, devirtualization limits, and Static Polymorphism via CRTP (Curiously Recurring Template Pattern).
 
-### 3. Resource Management & RAII
-- **The Rules of Resource Management**
-    - **Rule of 3 / 5 / 0:** Managing copy constructors, move constructors, and destructors efficiently.
-    - **The Copy-and-Swap Idiom:** The industry-standard way to implement the assignment operator (`operator=`) providing strong exception safety by combining the copy constructor and destructor.
-    - **Object Slicing:** The memory loss that occurs when passing a derived class object by value into a base class parameter.
-    - **Dynamic Allocation Divergence:** `new`/`delete` (which invoke object constructors/destructors) vs. C's `malloc`/`free` (which handle raw uninitialized heap blocks).
-- **Value References, Semantics, & Optimization**
-    - **Value Categories:** Deepening understanding past lvalues and rvalues to include **prvalues** (pure rvalues like literal constants) and **xvalues** (expiring values bound to rvalue references).
-    - **Move Semantics:** Using `std::move` and perfect forwarding via `std::forward` alongside Universal References.
-    - **Copy by Value vs. Reference:** The performance divergence between `Type x` (heavy copying), `Type& x` (aliasing), and `const Type& x` (efficient, read-only read-through).
-    - **RVO & NRVO:** How Return Value Optimization and Named Return Value Optimization allow the compiler to completely elide copy/move constructors when returning objects from functions.
-    - **Smart Pointers:** `std::unique_ptr`, `std::shared_ptr`, and `std::weak_ptr` (including custom deleters for managing underlying OS resource handles).
-- **Exception Handling & Safety**
-    - **Try, Catch, and Throw:** The mechanics of catching exceptions by reference (`const std::exception&`) to prevent object slicing.
-    - **Stack Unwinding:** The automatic process where all local stack objects are cleanly destroyed via their destructors when an exception is thrown.
-    - **The `noexcept` Keyword:** Optimizing performance by letting the compiler know a function is guaranteed not to throw an exception (critical for move constructors).
-    - **Exception Safety Guarantees:** Understanding Basic, Strong (transactional, copy-and-swap), and No-fail guarantees.
+### 3. High-Performance Templates & Compile-Time Evaluation
+* **Compile-Time Execution:** `constexpr` and `consteval` functions, `std::is_constant_evaluated()`.
+* **Conditional Compilation:** `if constexpr` (replacing complex SFINAE) and `<type_traits>` inspection (`std::is_trivially_copyable`, `std::is_standard_layout`).
+* **C++20 Concepts:** Constraining template types cleanly to enforce memory/layout properties (e.g., `requires std::is_trivially_destructible_v<T>`).
+* **Template Code Bloat:** Strategies to prevent binary bloat when parameterizing over large vector/matrix dimensions.
 
-### 4. Generic Programming & Compile-Time Evaluation
-- **Template Mechanics**
-    - **Function & Class Templates:** Writing type-independent reusable logic.
-    - **Template Specialization:** Overriding template behavior for specialized data types (Full vs. Partial specialization).
-    - **Concepts (C++20):** Constraining template arguments with clean, human-readable traits.
-- **Compile-Time Utilities**
-    - **SFINAE:** Substitution Failure Is Not An Error, and how template overloads are discarded safely.
-    - **Type Inference (`decltype`):** Inspecting the declared type of an expression or variable at compile time without evaluating it.
-    - **Type Traits & `constexpr`:** Using utilities inside `<type_traits>` alongside `constexpr` and `consteval` to force processing from runtime to compile time.
+### 4. Performance-First Containers & Vocabulary Types
+* **Contiguous Containers:** `std::vector` (capacity growth dynamics, `reserve()` vs. `resize()`, `shrink_to_fit()`, `emplace_back()`).
+* **Non-Owning Views:** `std::string_view` and `std::span` (C++20) for zero-copy slice operations across contiguous buffers.
+* **Cache-Friendly Associative Alternatives:** Flat maps / sorted contiguous arrays (`std::vector<std::pair<K,V>>` + `std::lower_bound`) vs. `std::unordered_map` bucket/node allocations.
+* **Stack Vocabulary Types:** `std::optional` (avoiding pointer sentinels), `std::variant` + `std::visit` (type-safe tagged unions without heap allocations).
+* **High-Throughput Algorithms:** `std::sort`, `std::lower_bound`, `std::transform`, `std::accumulate` / `std::reduce`.
 
-### 5. The Standard Template Library (STL) & Vocabulary Types
-- **Containers & Iteration**
-    - **Sequence Containers:** `std::vector` (contiguous memory), `std::list`, `std::deque`.
-    - **Associative & Unordered:** Tree-based `std::map`/`std::set` ($O(\log n)$) vs. Hash-based `std::unordered_map`/`std::unordered_set` ($O(1)$).
-    - **Ranged-for Loops (C++11):** Clean syntax for collection traversal, and how pairing it with `const auto&` or `auto&&` avoids accidental duplication.
-- **Functional STL Utilities**
-    - **Functors:** Objects that behave like functions by overloading `operator()`.
-    - **Lambdas (C++11):** Anonymous inline functions with explicit capture clauses (`[]`, `[&]`, `[=]`) used heavily in STL algorithms.
-    - **Core Algorithms & Ranges:** `std::sort`, `std::find`, Parallel STL execution policies (`std::execution::par`), and C++20 non-owning pipeline views.
-- **Modern Vocabulary Types**
-    - **`std::string_view` (C++17):** High-performance, zero-allocation, non-owning string references.
-    - **`std::optional` (C++17):** Managing clean, semantic types that may or may not hold a valid value without using null pointer hacks.
-    - **`std::variant` (C++17):** Type-safe, stack-allocated alternative to raw C unions.
-- **Algorithms:**
-  - **Non-modifying:** std::find, std::count, std::for_each, std::all_of/any_of/none_of
-  - **Modifying & Erasing:** std::transform, std::copy, std::fill, std::replace, std::remove, std::unique, std::erase/std::erase_if (C++20)
-  - **Partitioning:** std::partition, std::stable_partition
-  - **Sorting & Searching:** std::sort, std::binary_search, std::lower_bound/upper_bound, std::equal_range
-  - **Set Operations (on sorted ranges):** std::set_intersection, std::set_difference
-  - **Min/Max:** std::min, std::max, std::minmax_element
-  - **Numeric:** std::accumulate, std::reduce, std::inner_product, std::partial_sum
+### 5. Hardware-Level Concurrency & Memory Models
+* **Atomic Mechanics:** `std::atomic<T>`, `std::atomic_ref<T>` (C++20), lock-free verification (`is_lock_free()`).
+* **Compare-And-Swap (CAS):** `compare_exchange_weak` (for CAS loops on LL/SC architectures like ARM) vs. `compare_exchange_strong`.
+* **Memory Ordering Semantics:**
+  * `memory_order_relaxed`: Atomicity only, full hardware/compiler reordering.
+  * `memory_order_acquire` / `memory_order_release`: One-way memory barriers, synchronizes-with relationship.
+  * `memory_order_seq_cst`: Total global order, performance cost.
+* **Explicit Synchronization:** `std::atomic_thread_fence`, `std::atomic_flag` (for spinlocks), and synchronization without locks.
 
-### 6. The Compilation Pipeline & Build Architecture
-- **The Production Pipeline**
-    1.  **Preprocessing:** Expanding macros, handling conditional compilation (`#ifdef`), and text-injecting includes via header guards (`#ifndef` / `#pragma once`) or forward declarations.
-    2.  **Compilation:** Translating source code into target assembly language while enforcing the One Definition Rule (ODR) across Translation Units (TUs).
-    3.  **Assembly:** Transforming assembly files into machine-code object files (`.obj`, `.o`).
-    4.  **Linking:** Resolving function symbols across translation units, managing Static Libraries (`.lib`/`.a`) vs. Dynamic Libraries (`.dll`/`.so`).
-
-### 7. Concurrency, Multithreading, & Asynchrony
-- **Thread Management**
-    - **Threads:** Launching and joining background tasks using `std::thread` and `std::jthread` (the modern auto-joining wrapper).
-    - **Asynchronous Tasks:** Using `std::async`, `std::future`, and `std::promise` for non-blocking execution pipelines.
-- **Thread Safety & Synchronization**
-    - **Data Races & Mutexes:** Protecting shared memory using `std::mutex`, Condition Variables, and RAII-managed wrappers like `std::lock_guard` and `std::unique_lock`.
-    - **Deadlock Prevention:** Utilizing `std::scoped_lock` (C++17) to acquire multiple resources safely in a single atomic call.
-- **Atomic Operations & The Memory Model**
-    - **Atomic Mechanics:** Lock-free, hardware-level serialization via `std::atomic` for blazing-fast shared flags and telemetry counters.
-    - **Memory Ordering (`std::memory_order`):** Understanding how instructions are allowed to be reordered by the compiler or CPU cache hierarchies:
-        - *Sequentially Consistent (`memory_order_seq_cst`):* The strict, default order. Establishes a single, global total order for all threads.
-        - *Acquire-Release Semantics (`memory_order_acquire` / `memory_order_release`):* Synchronization without a global ordering penalty. A release write in one thread synchronizes with an acquire read in another, ensuring all prior writes are visible.
-        - *Relaxed Ordering (`memory_order_relaxed`):* Guarantees only atomicity and modification consistency; allows total instruction reordering for maximum performance (perfect for independent counters).
-
-### 8. Bitwise Manipulation & Low-Level Math
-- **Bitwise Logic**
-    - **Bitwise Operators:** Efficiently manipulating raw bytes with `&`, `|`, `^`, `~`, `<<`, `>>`.
-    - **Masking Operations:** Constructing bitmasks, setting, clearing, toggling, and shifting bits in safety-critical hardware environments.
-- **Standard Library Tools**
-    - **The `<bit>` Header (C++20):** Replacing unportable compiler-specific intrinsics (like `__builtin_popcount`) with unified type-safe tools like `std::popcount`, `std::rotl`, and `std::rotr`.
+### 6. Bitwise Manipulation & Low-Level Math
+* **Bitwise Arithmetic:** Bitmasks, shifts, popcount, leading/trailing zero counts for branchless bit-parallel algorithms.
+* **C++20 `<bit>` Library:** `std::popcount`, `std::countl_zero`, `std::countr_zero`, `std::bit_width`, `std::rotl`, `std::rotr`.
+* **Branchless Idioms:** Arithmetic sign-extension tricks, conditional masking (`mask & val`), branch-free clamping and min/max operations.
 
 ## Folder Structure 
 
